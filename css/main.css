@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+:root {
+  --main: #0f2a54;
+  --dark: #212121;
+  --text: #6b6b6b;
+  --grey: #f7f7f7;
+  --grey_active: #e8e8e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Merriweather', serif;
+}
+
+body {
+  background: var(--grey);
+  color: var(--dark);
+}
+
+i.fi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  margin: auto;
+  max-width: 1400px;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 20px 0 0;
+  /* background: red; */
+}
+
+.logo {
+  width: 270px;
+  height: 50px;
+  position: relative;
+  background: red;
+}
+
+.logo img {
+  width: 45px;
+  position: absolute;
+  top: -78px;
+  left: 130px;
+  transform: rotate(-90deg);
+  transform-origin: left;
+}
+
+.menu_bar {
+  width: 1100px;
+  display: flex;
+  align-items: center;
+}
+
+.main_menu {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} 
+
+.main_menu li a {
+  padding: 11px 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+}
+
+.main_menu li a span {
+  padding: 5px 8px 4px;
+  border-radius: 50px;
+}
+
+.main_menu li a:before {
+  content: "";
+  width: 0%;
+  height: 3px;
+  display: block;
+  background: var(--main);
+  position: absolute;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  transition: .2s;
+  border-radius: 2px;
+}
+
+.main_menu li a:hover {
+  color: var(--main);
+}
+
+.main_menu li a:hover:before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+.main_menu li a:hover span {
+  /* background: var(--main); */
+  color: var(--main);
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Select Style Btn */
+.select_btn {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 14px;
+}
+
+.select_btn .selected {
+  background: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--grey_active);
+  z-index: 999;
+}
+
+.select_btn .selected span.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--grey_active);
+}
+
+.select_btn .selected span.data {
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select_btn>ul.list {
+  padding: 25px 0 0;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  top: -50%;
+  left: 0;
+  height: 0;
+  opacity: 0;
+  z-index: 5;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  transition: .2s;
+  visibility: hidden;
+  font-size: 14px;
+}
+
+.select_btn .selected:hover+ul.list {
+  height: 275px;
+  opacity: 1;
+  visibility: visible;
+  top: 50%;
+}
+
+.select_btn>ul.list:hover {
+  height: 275px;
+  opacity: 1;
+  visibility: visible;
+  top: 50%;
+}
+
+.select_btn>ul.list>li {
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 50px;
+  display: flex;
+  cursor: pointer;
+}
+
+.select_btn>ul.list>li:hover {
+  background: var(--grey_active);
+}
